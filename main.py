@@ -1,4 +1,5 @@
 import os
+import sys
 import random
 import textwrap
 import pytesseract
@@ -33,7 +34,7 @@ def wrapText(text, size):
     wrapper = textwrap.TextWrapper(width=size)
     return wrapper.fill(text=text)
 
-text = imageToText('input/sample.jpg')
+text = imageToText(sys.argv[1])
 canvas_img = getRandomCanvas("data/backgrounds/")
 #text = wrapText(text, 60)
 drawTextToImage(text, canvas_img, 36, (30,40))
